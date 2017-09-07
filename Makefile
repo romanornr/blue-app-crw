@@ -63,6 +63,10 @@ else ifeq ($(COIN),komodo)
 # Komodo
 DEFINES   += BTCHIP_P2PKH_VERSION=60 BTCHIP_P2SH_VERSION=85 BTCHIP_COIN_FAMILY=1 BTCHIP_COINID=\"Komodo\" COINID_UPCASE=\"KMD\" COLOR_HDR=0x326464 COLOR_DB=0x99b2b2 COINID_NAME=\"Komodo\" COINID=$(COIN) BTCHIP_COINID_SHORT=\"KMD\" COIN_KOMODO
 APPNAME ="Komodo"
+else ifeq ($(COIN), crowncoin)
+# Crown:
+DEFINES   += BTCHIP_P2PKH_VERSION=0 BTCHIP_P2SH_VERSION=28 BTCHIP_COIN_FAMILY=1 BTCHIP_COINID=\"Crown\" COINID_UPCASE=\"CROWN\" COLOR_HDR=0x00132B COLOR_DB=334255 COINID_NAME=\"Crown\" COINID=$(COIN) BTCHIP_COINID_SHORT=\"CRW\" COIN_CROWN
+APPNAME ="Crowncoin"
 else ifeq ($(COIN),stratis)
 # Stratis 
 DEFINES   += BTCHIP_P2PKH_VERSION=63 BTCHIP_P2SH_VERSION=125 BTCHIP_COIN_FAMILY=2 BTCHIP_COINID=\"Stratis\" COINID_UPCASE=\"STRAT\" COLOR_HDR=0x3790CA COLOR_DB=0x9BC8E5 COINID_NAME=\"Stratis\" COINID=$(COIN) BTCHIP_COINID_SHORT=\"STRAT\" COIN_STRATIS HAVE_PEERCOIN_SUPPORT
@@ -76,7 +80,7 @@ DEFINES += BTCHIP_P2PKH_VERSION=55 BTCHIP_P2SH_VERSION=85 BTCHIP_COIN_FAMILY=2 B
 APPNAME ="PoSW"
 else
 ifeq ($(filter clean,$(MAKECMDGOALS)),)
-$(error Unsupported COIN - use bitcoin_testnet, bitcoin, bitcoin_cash, litecoin, dogecoin, dash, zcash, komodo, stratis, peercoin, posw) 
+$(error Unsupported COIN - use bitcoin_testnet, bitcoin, bitcoin_cash, litecoin, dogecoin, dash, crown, zcash, komodo, stratis, peercoin, posw) 
 endif
 endif
 
